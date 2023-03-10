@@ -22,8 +22,14 @@ find_git_dirty() {
 
 PROMPT_COMMAND="find_git_branch; find_git_dirty; $PROMPT_COMMAND"
 
+# Ubuntu Default
+# export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$"
+
+# Custom
+export PS1="\[$bldgrn\]\u@\h\[$txtrst\]:\[$txtblu\]\w \[$txtcyn\]\$git_branch\[$bldred\]\$git_dirty\[$txtrst\]\$ "
+
 # Default Git enabled prompt with dirty state
-# export PS1="\u@\h \w \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
+# export PS1="\u@\h:\w \[$bldylw\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
 
 # Another variant:
 # export PS1="\[$bldgrn\]\u@\h\[$txtrst\] \w \[$bldylw\]\$git_branch\[$txtcyn\]\$git_dirty\[$txtrst\]\$ "
