@@ -38,7 +38,9 @@ Edit your `~/.bash_profile` or `~/.profile` or `~/.bashrc` (for Ubuntu) and add 
 
 ```bash
 export GITAWAREPROMPT=~/.bash/git-aware-prompt
-source "${GITAWAREPROMPT}/main.sh"
+if [ -f ${GITAWAREPROMPT}/main.sh ]; then
+  source "${GITAWAREPROMPT}/main.sh"
+fi
 ```
 
 
